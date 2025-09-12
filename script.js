@@ -355,8 +355,8 @@ document.head.appendChild(style);
 
 // Funções de scroll para os botões CTA
 function scrollToOrder() {
-    // Redirecionar para uma página de compra externa ou mostrar modal
-    window.open('https://freedomfromjointpain.net/cb/', '_blank');
+    // Redirecionar para a página de afiliado
+    window.location.href = 'https://hop.clickbank.net/?affiliate=raniere57&vendor=jointn11&v=cb&tid=17539368572&p=y';
 }
 
 function scrollToBenefits() {
