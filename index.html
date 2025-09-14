@@ -17,6 +17,23 @@
 
       gtag('config', 'AW-17539368572');
     </script>
+    
+    <!-- Event snippet for jointn11 conversion page -->
+    <script>
+    function gtag_report_conversion(url) {
+      // Primeiro redireciona
+      window.location.href = url;
+      
+      // Depois tenta registrar a conversão (não bloqueia o redirecionamento)
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17539368572/7jZBCKisqpkbEPyMtqtB',
+            'value': 1,
+            'currency': 'USD'
+        });
+      }
+    }
+    </script>
 </head>
 <body>
 

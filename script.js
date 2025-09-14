@@ -355,8 +355,26 @@ document.head.appendChild(style);
 
 // Funções de scroll para os botões CTA
 function scrollToOrder() {
-    // Redirecionar para a página de afiliado
-    window.location.href = 'https://hop.clickbank.net/?affiliate=raniere57&vendor=jointn11&v=cb&tid=17539368572&p=y';
+    // URL do afiliado
+    const affiliateUrl = 'https://hop.clickbank.net/?affiliate=raniere57&vendor=jointn11&v=cb&tid=17539368572&p=y';
+    
+    console.log('scrollToOrder called, redirecting to:', affiliateUrl);
+    
+    // Redirecionamento direto primeiro
+    window.location.href = affiliateUrl;
+    
+    // Tentar registrar conversão (não bloqueia)
+    try {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17539368572/7jZBCKisqpkbEPyMtqtB',
+                'value': 1,
+                'currency': 'USD'
+            });
+        }
+    } catch (e) {
+        console.log('Error tracking conversion:', e);
+    }
 }
 
 function scrollToBenefits() {
